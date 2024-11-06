@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GameDevWithMarco.RandomStuff;
+using GameDevWithMarco.Data;
 
 namespace GameDevWithMarco.Player
 {
@@ -12,6 +13,7 @@ namespace GameDevWithMarco.Player
     public class CollectCoinsOnTriggerEnter : MonoBehaviour
     {
         [SerializeField] GameEvent coinCollected;
+        [SerializeField] GlobalData globalData;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -19,7 +21,14 @@ namespace GameDevWithMarco.Player
             {
                 int coinValue = collision.GetComponent<Coin>().CoinValue;
 
-                GameManager.Instance.AddToScore(coinValue);
+                if (globalData != null)
+                {
+                    globalData.AddToScore(coinValue);
+                }
+                else
+                {
+                    Debug.LogWarning("No Global Data SO assigned to the CCOTE script");
+                }
 
                 Destroy(collision.gameObject);
 
