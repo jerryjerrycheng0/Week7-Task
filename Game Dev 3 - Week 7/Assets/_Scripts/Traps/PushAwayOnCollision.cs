@@ -2,6 +2,7 @@ using UnityEngine;
 using DG.Tweening;
 using GameDevWithMarco.CameraStuff;
 using GameDevWithMarco.ObserverPattern;
+using GameDevWithMarco.Managers;
 
 namespace GameDevWithMarco.Traps
 {
@@ -39,6 +40,8 @@ namespace GameDevWithMarco.Traps
 
             //---Ripple Effect---
             CameraRippleEffect.Instance.Ripple(collision.contacts[0].point);
+
+            VfxManager.Instance.HitStop(0.2f);
         }
     }
 }
