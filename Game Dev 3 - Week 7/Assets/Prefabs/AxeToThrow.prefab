@@ -290,4 +290,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinCollected: {fileID: 11400000, guid: 4c5b0912ff6155d44b9ada2e48108c06, type: 2}
-  globalData: {fileID: 0}
+  globalData: {fileID: 11400000, guid: b8acc34373c198f4794d77e3b58d3e8b, type: 2}
