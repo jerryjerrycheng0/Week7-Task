@@ -53,3 +53,6 @@ TagManager:
   - name: Axeable
     uniqueID: 3633918983
     locked: 0
+  - name: Collectables
+    uniqueID: 2881792073
+    locked: 0
