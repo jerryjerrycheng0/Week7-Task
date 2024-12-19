@@ -26,9 +26,12 @@ namespace GameDevWithMarco.Managers
 
         public void GameWon()
         {
-
-            Time.timeScale = 0;
+            Time.timeScale = 0f;
             Debug.Log("GAME WON");
+        }
+        public void GameOver()
+        {
+            Time.timeScale = 0.2f;
         }
     }
 }

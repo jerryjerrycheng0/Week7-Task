@@ -517,6 +517,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 756633666}
+  - {fileID: 1012281244}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -750,6 +751,7 @@ GameObject:
   - component: {fileID: 232823427}
   - component: {fileID: 232823426}
   - component: {fileID: 232823425}
+  - component: {fileID: 232823429}
   m_Layer: 0
   m_Name: RotatingTrap (4)
   m_TagString: Trap
@@ -890,6 +892,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &232823429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232823423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c53538286de524cafe870a0beeb7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
+  playerHP: {fileID: 814001494}
 --- !u!1 &244316888
 GameObject:
   m_ObjectHideFlags: 0
@@ -2682,6 +2698,7 @@ GameObject:
   - component: {fileID: 561727502}
   - component: {fileID: 561727501}
   - component: {fileID: 561727500}
+  - component: {fileID: 561727504}
   m_Layer: 0
   m_Name: RotatingTrap (5)
   m_TagString: Trap
@@ -2822,6 +2839,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &561727504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561727498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c53538286de524cafe870a0beeb7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
+  playerHP: {fileID: 814001494}
 --- !u!1 &561737044
 GameObject:
   m_ObjectHideFlags: 0
@@ -3785,6 +3816,7 @@ GameObject:
   - component: {fileID: 654823216}
   - component: {fileID: 654823215}
   - component: {fileID: 654823214}
+  - component: {fileID: 654823218}
   m_Layer: 0
   m_Name: RotatingTrap (7)
   m_TagString: Trap
@@ -3925,6 +3957,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &654823218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654823212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c53538286de524cafe870a0beeb7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
+  playerHP: {fileID: 814001494}
 --- !u!1 &655397299
 GameObject:
   m_ObjectHideFlags: 0
@@ -4527,6 +4573,7 @@ GameObject:
   - component: {fileID: 716163538}
   - component: {fileID: 716163537}
   - component: {fileID: 716163540}
+  - component: {fileID: 716163541}
   m_Layer: 0
   m_Name: RotatingTrap
   m_TagString: Trap
@@ -4667,6 +4714,20 @@ MonoBehaviour:
   scaleBounceTime: 0.5
   scalePunchStrenght: {x: 0.25, y: 0.25, z: 0.25}
   collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
+--- !u!114 &716163541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716163535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c53538286de524cafe870a0beeb7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
+  playerHP: {fileID: 814001494}
 --- !u!1 &726899014
 GameObject:
   m_ObjectHideFlags: 0
@@ -5294,6 +5355,7 @@ GameObject:
   - component: {fileID: 814001489}
   - component: {fileID: 814001491}
   - component: {fileID: 814001493}
+  - component: {fileID: 814001494}
   - component: {fileID: 814001492}
   m_Layer: 3
   m_Name: Player - Green
@@ -5460,6 +5522,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 814001494}
+        m_TargetAssemblyTypeName: GameDevWithMarco.Player.PlayerHP, Assembly-CSharp
+        m_MethodName: DealDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 716163541}
+        m_TargetAssemblyTypeName: GameDevWithMarco.TrapDamage, Assembly-CSharp
+        m_MethodName: Damage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &814001490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5554,6 +5640,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinCollected: {fileID: 11400000, guid: 4c5b0912ff6155d44b9ada2e48108c06, type: 2}
   globalData: {fileID: 11400000, guid: b8acc34373c198f4794d77e3b58d3e8b, type: 2}
+--- !u!114 &814001494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814001482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa0a49d888c7674d9f5583ea00cf4cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 10
+  damageValue: 0
+  isPlayerDed: 0
+  gameManager: {fileID: 1007603989}
 --- !u!1 &818181564
 GameObject:
   m_ObjectHideFlags: 0
@@ -7059,6 +7161,140 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.269565, y: 0.72521555}
   m_EdgeRadius: 0
+--- !u!1 &1012281243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1012281244}
+  - component: {fileID: 1012281246}
+  - component: {fileID: 1012281245}
+  m_Layer: 5
+  m_Name: Text (TMP) (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1012281244
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012281243}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 72654739}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 48, y: -966}
+  m_SizeDelta: {x: 457.974, y: 102.4693}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &1012281245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012281243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Lives: '
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 40.9
+  m_fontSizeBase: 40.9
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1012281246
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012281243}
+  m_CullTransparentMesh: 1
 --- !u!1 &1025139833
 GameObject:
   m_ObjectHideFlags: 0
@@ -11690,9 +11926,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1104565363
-  m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingLayerID: -1413175223
+  m_SortingLayer: 4
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1286469658, guid: 8f023cb69ab5b5f4a9d797f01321ec05, type: 3}
   m_Color: {r: 1, g: 0.9011491, b: 0, a: 1}
   m_FlipX: 0
@@ -11778,7 +12014,7 @@ GameObject:
   - component: {fileID: 1286283592}
   - component: {fileID: 1286283591}
   m_Layer: 0
-  m_Name: tilesheet@2_116
+  m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12460,8 +12696,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1104565363
-  m_SortingLayer: 1
+  m_SortingLayerID: -1413175223
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -1286469658, guid: 8f023cb69ab5b5f4a9d797f01321ec05, type: 3}
   m_Color: {r: 1, g: 0.9011491, b: 0, a: 1}
@@ -12550,6 +12786,7 @@ GameObject:
   - component: {fileID: 1402243686}
   - component: {fileID: 1402243685}
   - component: {fileID: 1402243684}
+  - component: {fileID: 1402243688}
   m_Layer: 0
   m_Name: RotatingTrap (3)
   m_TagString: Trap
@@ -12690,6 +12927,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1402243688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402243682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c53538286de524cafe870a0beeb7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
+  playerHP: {fileID: 814001494}
 --- !u!1 &1411822078
 GameObject:
   m_ObjectHideFlags: 0
@@ -13125,7 +13376,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 756633667}
+  playerLives: {fileID: 1012281245}
   globalData: {fileID: 11400000, guid: b8acc34373c198f4794d77e3b58d3e8b, type: 2}
+  playerHP: {fileID: 814001494}
 --- !u!4 &1461649863
 Transform:
   m_ObjectHideFlags: 0
@@ -13198,8 +13451,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1104565363
-  m_SortingLayer: 1
+  m_SortingLayerID: -1413175223
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -1286469658, guid: 8f023cb69ab5b5f4a9d797f01321ec05, type: 3}
   m_Color: {r: 1, g: 0.9011491, b: 0, a: 1}
@@ -13332,8 +13585,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1104565363
-  m_SortingLayer: 1
+  m_SortingLayerID: -1413175223
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -1286469658, guid: 8f023cb69ab5b5f4a9d797f01321ec05, type: 3}
   m_Color: {r: 1, g: 0.9011491, b: 0, a: 1}
@@ -14294,6 +14547,7 @@ GameObject:
   - component: {fileID: 1651957133}
   - component: {fileID: 1651957132}
   - component: {fileID: 1651957131}
+  - component: {fileID: 1651957135}
   m_Layer: 0
   m_Name: RotatingTrap (6)
   m_TagString: Trap
@@ -14434,6 +14688,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1651957135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651957129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c53538286de524cafe870a0beeb7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
+  playerHP: {fileID: 814001494}
 --- !u!1 &1775857677
 GameObject:
   m_ObjectHideFlags: 0
@@ -15069,6 +15337,7 @@ GameObject:
   - component: {fileID: 1917966051}
   - component: {fileID: 1917966050}
   - component: {fileID: 1917966049}
+  - component: {fileID: 1917966053}
   m_Layer: 0
   m_Name: RotatingTrap (1)
   m_TagString: Trap
@@ -15209,6 +15478,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1917966053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917966047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c53538286de524cafe870a0beeb7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
+  playerHP: {fileID: 814001494}
 --- !u!1 &1922678892
 GameObject:
   m_ObjectHideFlags: 0
@@ -15919,6 +16202,7 @@ GameObject:
   - component: {fileID: 1982444951}
   - component: {fileID: 1982444950}
   - component: {fileID: 1982444949}
+  - component: {fileID: 1982444953}
   m_Layer: 0
   m_Name: RotatingTrap (2)
   m_TagString: Trap
@@ -16059,6 +16343,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1982444953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982444947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c53538286de524cafe870a0beeb7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
+  playerHP: {fileID: 814001494}
 --- !u!1 &2017120964
 GameObject:
   m_ObjectHideFlags: 0
