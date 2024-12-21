@@ -1,12 +1,11 @@
 using GameDevWithMarco.Data;
 using GameDevWithMarco.Player;
-using GameDevWithMarco.Managers;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-namespace GameDevWithMarco
+namespace GameDevWithMarco.Managers
 {
     public class UIManager : MonoBehaviour
     {
@@ -19,26 +18,25 @@ namespace GameDevWithMarco
         {
             if (globalData != null)
             {
-                scoreText.text = $"<b>Score</b>:{globalData.Score}";
+                scoreText.text = $"<b>Score</b>: {globalData.Score}";
             }
             else
             {
-                Debug.Log("No Global Data SO assigned to the UI Manager");
+                Debug.LogWarning("No Global Data SO assigned to the UI Manager");
             }
-            
         }
 
         public void UpdateLivesText()
         {
-            if (globalData != null)
+            if (playerHP != null)
             {
-                playerLives.text = $"<b>Lives</b>:" + playerHP.healthPoints;
+                playerLives.text = $"<b>Lives</b>: {playerHP.healthPoints}";
             }
             else
             {
-                Debug.Log("No PlayerHP assigned to the UI Manager");
+                Debug.LogWarning("No PlayerHP assigned to the UI Manager");
             }
-
         }
     }
 }
+

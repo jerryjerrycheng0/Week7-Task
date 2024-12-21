@@ -2,26 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GameDevWithMarco.Managers;
+using GameDevWithMarco.Interfaces;
 
 namespace GameDevWithMarco.Player
 {
-    public class PlayerHP : MonoBehaviour
+    public class PlayerHP : MonoBehaviour, IDamagable
     {
         public int healthPoints = 10;
-        public int damageValue;
-        //public AudioSource playerHurt;
-        //public AudioSource playerDed;
+        public int damageValue = 1;
         public bool isPlayerDed = false;
         [SerializeField] GameManager gameManager;
+        [SerializeField] UIManager uiManager;
 
-        public void DealDamage()
+        public void Damage(int amount)
         {
+            DealDamage(amount);
+        }
 
-            // Deduct health and check if the player is dead, then plays a hurt sound
-            healthPoints -= damageValue;
-            //playerHurt.Play();
+        public void DealDamage(int damage)
+        {
+            healthPoints -= damage;
 
-            if (healthPoints <= 0)
+            // Notify the UI of the updated health
+            uiManager.UpdateLivesText();
+
+            // Check if the player is dead
+            if (healthPoints <= 0 && !isPlayerDed)
             {
                 isPlayerDed = true;
                 gameManager.GameOver();
@@ -33,11 +39,9 @@ namespace GameDevWithMarco.Player
 
         private IEnumerator HandlePlayerDeath()
         {
-            // Short delay for good measure
             yield return new WaitForSeconds(0.1f);
-            //playerDed.Play();
-            Time.timeScale = 0; //Stops the timer to prevent the enemies from further spawning
+            Time.timeScale = 0; // Stops the timer to prevent the enemies from further spawning
         }
-
     }
 }
+

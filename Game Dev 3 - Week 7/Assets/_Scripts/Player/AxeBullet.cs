@@ -11,8 +11,13 @@ namespace GameDevWithMarco.Player
         Rigidbody2D rb;
         [SerializeField] GameEvent axeCollected;
         [SerializeField] GameEvent axeHit;
-        bool haveIHitThetarget = false;
+        public bool haveIHitThetarget = false;
         ScreenBounds screenBounds;
+
+        // Spinning sound AudioSource on the axe prefab
+        [SerializeField] AudioSource spinSound;
+
+        [SerializeField] AudioSource axeHitted;
 
         // Start is called before the first frame update
         void Start()
@@ -20,42 +25,58 @@ namespace GameDevWithMarco.Player
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
             screenBounds = FindObjectOfType<ScreenBounds>();
+
+            // Start spinning sound when the axe is spawned
+            if (spinSound != null)
+            {
+                spinSound.Play();
+            }
+
             StartCoroutine(GrabbableAfterABit());
         }
 
-
-
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            //Stops the rotation
-            animator.SetTrigger("HitTarget");
-            //To keep track of logic
-            haveIHitThetarget = true;
-            //Raises the event
-            axeHit.Raise();
-            //Sestroys the rigid body to stop the axe
-            Destroy(rb);
+            axeHitted.Play();
 
+            // Stops the rotation animation
+            animator.SetTrigger("HitTarget");
+
+            // Stops the spinning sound
+            if (spinSound != null && spinSound.isPlaying)
+            {
+                spinSound.Stop();
+            }
+
+            // To keep track of logic
+            haveIHitThetarget = true;
+
+            // Raises the event
+            axeHit.Raise();
+
+            // Stops movement by destroying the rigidbody
+            Destroy(rb);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.tag == "Player" && haveIHitThetarget)
             {
-                //Raises the event to let the player know
+                // Raises the event to let the player know
                 axeCollected.Raise();
-                //Destroys this ones since we do not need it anymore
+
+                // Destroys this object since it is no longer needed
                 Destroy(gameObject);
             }
         }
 
         IEnumerator GrabbableAfterABit()
         {
-            //Waits for a bit
+            // Waits for a bit
             yield return new WaitForSeconds(1.25f);
-            //Makes the axe grabbable
+
+            // Makes the axe grabbable
             haveIHitThetarget = true;
         }
-
     }
 }

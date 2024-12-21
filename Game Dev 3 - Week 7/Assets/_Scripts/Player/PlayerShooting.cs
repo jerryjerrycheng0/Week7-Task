@@ -8,9 +8,8 @@ namespace GameDevWithMarco.Player
         [SerializeField] GameObject axePrefabToThrow;
         [SerializeField] Transform axeHoldingPosition;
         [SerializeField] float axeDistanceRange;
-        bool amIIHoldingTheTheAxe = true;
+        bool amIIHoldingTheAxe = true;
         [SerializeField] float axeForce;
-
 
         // Update is called once per frame
         void Update()
@@ -20,28 +19,29 @@ namespace GameDevWithMarco.Player
 
         private void ThrowCollectTheAxe()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && amIIHoldingTheAxe)
             {
-                if (amIIHoldingTheTheAxe == true)
-                {
-                    //Deactivate the axe
-                    axe.SetActive(false);
-                    //To keep track if I am holding the axe or not
-                    amIIHoldingTheTheAxe = false;
-                    //Spawns a new axe
-                    var thrownAxe = Instantiate(axePrefabToThrow, axeHoldingPosition.transform.position, transform.rotation);
-                    //Adds a rigidbody2d to it
-                    Rigidbody2D rb = thrownAxe.GetComponent<Rigidbody2D>();
-                    //Adds force to it
-                    rb.AddForce(transform.right * axeForce * Time.deltaTime, ForceMode2D.Impulse);
-                }
+                // Deactivate the axe
+                axe.SetActive(false);
+
+                // Update state
+                amIIHoldingTheAxe = false;
+
+                // Spawn a new axe
+                var thrownAxe = Instantiate(axePrefabToThrow, axeHoldingPosition.position, transform.rotation);
+
+                // Add rigidbody2D and force
+                Rigidbody2D rb = thrownAxe.GetComponent<Rigidbody2D>();
+                rb.AddForce(transform.right * axeForce * Time.deltaTime, ForceMode2D.Impulse);
             }
         }
+
         public void RecoverAxe()
         {
-            //Makes the bool true
-            amIIHoldingTheTheAxe = true;
-            //Reactivate the real axe
+            // Update state
+            amIIHoldingTheAxe = true;
+
+            // Reactivate the real axe
             axe.SetActive(true);
         }
     }

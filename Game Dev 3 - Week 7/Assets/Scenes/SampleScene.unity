@@ -579,6 +579,7 @@ GameObject:
   m_Component:
   - component: {fileID: 196649257}
   - component: {fileID: 196649258}
+  - component: {fileID: 196649259}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -653,6 +654,102 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &196649259
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196649256}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4e34db351ef719c4d855ba5598e018f8, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &221406245
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,6 +849,7 @@ GameObject:
   - component: {fileID: 232823426}
   - component: {fileID: 232823425}
   - component: {fileID: 232823429}
+  - component: {fileID: 232823430}
   m_Layer: 0
   m_Name: RotatingTrap (4)
   m_TagString: Trap
@@ -906,6 +1004,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
   playerHP: {fileID: 814001494}
+  hurtSound: {fileID: 1952074044}
+--- !u!114 &232823430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232823423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b156b310ef7874480e7bf7c59e3dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 232823429}
+        m_TargetAssemblyTypeName: GameDevWithMarco.TrapDamage, Assembly-CSharp
+        m_MethodName: Damage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &244316888
 GameObject:
   m_ObjectHideFlags: 0
@@ -2699,6 +2826,7 @@ GameObject:
   - component: {fileID: 561727501}
   - component: {fileID: 561727500}
   - component: {fileID: 561727504}
+  - component: {fileID: 561727505}
   m_Layer: 0
   m_Name: RotatingTrap (5)
   m_TagString: Trap
@@ -2853,6 +2981,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
   playerHP: {fileID: 814001494}
+  hurtSound: {fileID: 1952074044}
+--- !u!114 &561727505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561727498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b156b310ef7874480e7bf7c59e3dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 232823429}
+        m_TargetAssemblyTypeName: GameDevWithMarco.TrapDamage, Assembly-CSharp
+        m_MethodName: Damage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &561737044
 GameObject:
   m_ObjectHideFlags: 0
@@ -3817,6 +3974,7 @@ GameObject:
   - component: {fileID: 654823215}
   - component: {fileID: 654823214}
   - component: {fileID: 654823218}
+  - component: {fileID: 654823219}
   m_Layer: 0
   m_Name: RotatingTrap (7)
   m_TagString: Trap
@@ -3971,6 +4129,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
   playerHP: {fileID: 814001494}
+  hurtSound: {fileID: 1952074044}
+--- !u!114 &654823219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654823212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b156b310ef7874480e7bf7c59e3dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 232823429}
+        m_TargetAssemblyTypeName: GameDevWithMarco.TrapDamage, Assembly-CSharp
+        m_MethodName: Damage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &655397299
 GameObject:
   m_ObjectHideFlags: 0
@@ -4574,6 +4761,7 @@ GameObject:
   - component: {fileID: 716163537}
   - component: {fileID: 716163540}
   - component: {fileID: 716163541}
+  - component: {fileID: 716163542}
   m_Layer: 0
   m_Name: RotatingTrap
   m_TagString: Trap
@@ -4728,6 +4916,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
   playerHP: {fileID: 814001494}
+  hurtSound: {fileID: 1952074044}
+--- !u!114 &716163542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716163535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b156b310ef7874480e7bf7c59e3dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 232823429}
+        m_TargetAssemblyTypeName: GameDevWithMarco.TrapDamage, Assembly-CSharp
+        m_MethodName: Damage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &726899014
 GameObject:
   m_ObjectHideFlags: 0
@@ -5560,9 +5777,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   axe: {fileID: 2022617089}
   axePrefabToThrow: {fileID: 8662566662078026592, guid: 9302d551e422fdc498bc4a22ddf1c7f8, type: 3}
+  axeBullet: {fileID: 58876120272256103, guid: 9302d551e422fdc498bc4a22ddf1c7f8, type: 3}
   axeHoldingPosition: {fileID: 832701767}
   axeDistanceRange: 1
   axeForce: 800
+  axeSpin: {fileID: 196649259}
 --- !u!114 &814001491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7218,7 +7437,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lives: '
+  m_text: 'Lives: 10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12787,6 +13006,7 @@ GameObject:
   - component: {fileID: 1402243685}
   - component: {fileID: 1402243684}
   - component: {fileID: 1402243688}
+  - component: {fileID: 1402243689}
   m_Layer: 0
   m_Name: RotatingTrap (3)
   m_TagString: Trap
@@ -12941,6 +13161,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
   playerHP: {fileID: 814001494}
+  hurtSound: {fileID: 1952074044}
+--- !u!114 &1402243689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402243682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b156b310ef7874480e7bf7c59e3dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 232823429}
+        m_TargetAssemblyTypeName: GameDevWithMarco.TrapDamage, Assembly-CSharp
+        m_MethodName: Damage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1411822078
 GameObject:
   m_ObjectHideFlags: 0
@@ -14548,6 +14797,7 @@ GameObject:
   - component: {fileID: 1651957132}
   - component: {fileID: 1651957131}
   - component: {fileID: 1651957135}
+  - component: {fileID: 1651957136}
   m_Layer: 0
   m_Name: RotatingTrap (6)
   m_TagString: Trap
@@ -14702,6 +14952,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
   playerHP: {fileID: 814001494}
+  hurtSound: {fileID: 1952074044}
+--- !u!114 &1651957136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651957129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b156b310ef7874480e7bf7c59e3dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 232823429}
+        m_TargetAssemblyTypeName: GameDevWithMarco.TrapDamage, Assembly-CSharp
+        m_MethodName: Damage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1775857677
 GameObject:
   m_ObjectHideFlags: 0
@@ -15338,6 +15617,7 @@ GameObject:
   - component: {fileID: 1917966050}
   - component: {fileID: 1917966049}
   - component: {fileID: 1917966053}
+  - component: {fileID: 1917966054}
   m_Layer: 0
   m_Name: RotatingTrap (1)
   m_TagString: Trap
@@ -15492,6 +15772,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
   playerHP: {fileID: 814001494}
+  hurtSound: {fileID: 1952074044}
+--- !u!114 &1917966054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917966047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b156b310ef7874480e7bf7c59e3dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 232823429}
+        m_TargetAssemblyTypeName: GameDevWithMarco.TrapDamage, Assembly-CSharp
+        m_MethodName: Damage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1922678892
 GameObject:
   m_ObjectHideFlags: 0
@@ -15849,6 +16158,7 @@ GameObject:
   - component: {fileID: 1952074041}
   - component: {fileID: 1952074043}
   - component: {fileID: 1952074042}
+  - component: {fileID: 1952074044}
   m_Layer: 0
   m_Name: Traps
   m_TagString: Untagged
@@ -15966,6 +16276,102 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!82 &1952074044
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952074040}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3e44301be28e94d4e991d8600470e85c, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1957203759
 GameObject:
   m_ObjectHideFlags: 0
@@ -16203,6 +16609,7 @@ GameObject:
   - component: {fileID: 1982444950}
   - component: {fileID: 1982444949}
   - component: {fileID: 1982444953}
+  - component: {fileID: 1982444954}
   m_Layer: 0
   m_Name: RotatingTrap (2)
   m_TagString: Trap
@@ -16357,6 +16764,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
   playerHP: {fileID: 814001494}
+  hurtSound: {fileID: 1952074044}
+--- !u!114 &1982444954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982444947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b156b310ef7874480e7bf7c59e3dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 232823429}
+        m_TargetAssemblyTypeName: GameDevWithMarco.TrapDamage, Assembly-CSharp
+        m_MethodName: Damage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2017120964
 GameObject:
   m_ObjectHideFlags: 0
