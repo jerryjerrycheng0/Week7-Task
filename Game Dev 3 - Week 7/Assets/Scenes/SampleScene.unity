@@ -1003,8 +1003,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
-  playerHP: {fileID: 814001494}
   hurtSound: {fileID: 1952074044}
+  damageAmount: 1
 --- !u!114 &232823430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1024,11 +1024,11 @@ MonoBehaviour:
       - m_Target: {fileID: 232823429}
         m_TargetAssemblyTypeName: GameDevWithMarco.TrapDamage, Assembly-CSharp
         m_MethodName: Damage
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2980,8 +2980,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
-  playerHP: {fileID: 814001494}
   hurtSound: {fileID: 1952074044}
+  damageAmount: 1
 --- !u!114 &561727505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3001,11 +3001,11 @@ MonoBehaviour:
       - m_Target: {fileID: 232823429}
         m_TargetAssemblyTypeName: GameDevWithMarco.TrapDamage, Assembly-CSharp
         m_MethodName: Damage
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4128,8 +4128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
-  playerHP: {fileID: 814001494}
   hurtSound: {fileID: 1952074044}
+  damageAmount: 1
 --- !u!114 &654823219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4149,11 +4149,11 @@ MonoBehaviour:
       - m_Target: {fileID: 232823429}
         m_TargetAssemblyTypeName: GameDevWithMarco.TrapDamage, Assembly-CSharp
         m_MethodName: Damage
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4915,8 +4915,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
-  playerHP: {fileID: 814001494}
   hurtSound: {fileID: 1952074044}
+  damageAmount: 1
 --- !u!114 &716163542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4936,11 +4936,11 @@ MonoBehaviour:
       - m_Target: {fileID: 232823429}
         m_TargetAssemblyTypeName: GameDevWithMarco.TrapDamage, Assembly-CSharp
         m_MethodName: Damage
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5739,30 +5739,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 814001494}
-        m_TargetAssemblyTypeName: GameDevWithMarco.Player.PlayerHP, Assembly-CSharp
-        m_MethodName: DealDamage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 716163541}
-        m_TargetAssemblyTypeName: GameDevWithMarco.TrapDamage, Assembly-CSharp
-        m_MethodName: Damage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &814001490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5777,11 +5753,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   axe: {fileID: 2022617089}
   axePrefabToThrow: {fileID: 8662566662078026592, guid: 9302d551e422fdc498bc4a22ddf1c7f8, type: 3}
-  axeBullet: {fileID: 58876120272256103, guid: 9302d551e422fdc498bc4a22ddf1c7f8, type: 3}
   axeHoldingPosition: {fileID: 832701767}
   axeDistanceRange: 1
   axeForce: 800
-  axeSpin: {fileID: 196649259}
 --- !u!114 &814001491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5875,6 +5849,7 @@ MonoBehaviour:
   damageValue: 0
   isPlayerDed: 0
   gameManager: {fileID: 1007603989}
+  uiManager: {fileID: 1461649862}
 --- !u!1 &818181564
 GameObject:
   m_ObjectHideFlags: 0
@@ -12232,9 +12207,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1286283592}
   - component: {fileID: 1286283591}
+  - component: {fileID: 1286283596}
+  - component: {fileID: 1286283595}
+  - component: {fileID: 1286283594}
+  - component: {fileID: 1286283593}
+  - component: {fileID: 1286283597}
   m_Layer: 0
   m_Name: Bone
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12299,13 +12279,131 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286283590}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.568, y: 0.577, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1952074041}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1286283593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286283590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2321b64268d1f2a45af2868004102784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceFromCollision: 2
+  pushBackTime: 0.5
+  pushBackEase: 0
+  scaleBounceTime: 0.5
+  scalePunchStrenght: {x: 0.25, y: 0.25, z: 0.25}
+  collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
+--- !u!114 &1286283594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286283590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b156b310ef7874480e7bf7c59e3dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 232823429}
+        m_TargetAssemblyTypeName: GameDevWithMarco.TrapDamage, Assembly-CSharp
+        m_MethodName: Damage
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1286283595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286283590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c53538286de524cafe870a0beeb7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
+  hurtSound: {fileID: 1952074044}
+  damageAmount: 2
+--- !u!61 &1286283596
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286283590}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.83870965, y: 0.8467742}
+    newSize: {x: 0.83870965, y: 0.8467742}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.83870965, y: 0.8467742}
+  m_EdgeRadius: 0
+--- !u!114 &1286283597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286283590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 504fdc8a5fdf7084781c855f8ebc14f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1297379871
 GameObject:
   m_ObjectHideFlags: 0
@@ -13160,8 +13258,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
-  playerHP: {fileID: 814001494}
   hurtSound: {fileID: 1952074044}
+  damageAmount: 1
 --- !u!114 &1402243689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13181,11 +13279,11 @@ MonoBehaviour:
       - m_Target: {fileID: 232823429}
         m_TargetAssemblyTypeName: GameDevWithMarco.TrapDamage, Assembly-CSharp
         m_MethodName: Damage
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -13577,6 +13675,7 @@ GameObject:
   - component: {fileID: 1461649863}
   - component: {fileID: 1461649862}
   - component: {fileID: 1461649861}
+  - component: {fileID: 1461649864}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -13643,6 +13742,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1461649864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461649860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b156b310ef7874480e7bf7c59e3dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 814001494}
+        m_TargetAssemblyTypeName: GameDevWithMarco.Player.PlayerHP, Assembly-CSharp
+        m_MethodName: DealDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1499699943
 GameObject:
   m_ObjectHideFlags: 0
@@ -14951,8 +15078,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
-  playerHP: {fileID: 814001494}
   hurtSound: {fileID: 1952074044}
+  damageAmount: 1
 --- !u!114 &1651957136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14972,11 +15099,11 @@ MonoBehaviour:
       - m_Target: {fileID: 232823429}
         m_TargetAssemblyTypeName: GameDevWithMarco.TrapDamage, Assembly-CSharp
         m_MethodName: Damage
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -15771,8 +15898,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
-  playerHP: {fileID: 814001494}
   hurtSound: {fileID: 1952074044}
+  damageAmount: 1
 --- !u!114 &1917966054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15792,11 +15919,11 @@ MonoBehaviour:
       - m_Target: {fileID: 232823429}
         m_TargetAssemblyTypeName: GameDevWithMarco.TrapDamage, Assembly-CSharp
         m_MethodName: Damage
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -16179,6 +16306,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1286283592}
   - {fileID: 716163536}
   - {fileID: 1917966048}
   - {fileID: 1982444948}
@@ -16763,8 +16891,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collidedWithTrap: {fileID: 11400000, guid: 717a00b8fcb349d41af51234b80a11c6, type: 2}
-  playerHP: {fileID: 814001494}
   hurtSound: {fileID: 1952074044}
+  damageAmount: 1
 --- !u!114 &1982444954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16784,11 +16912,11 @@ MonoBehaviour:
       - m_Target: {fileID: 232823429}
         m_TargetAssemblyTypeName: GameDevWithMarco.TrapDamage, Assembly-CSharp
         m_MethodName: Damage
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -17181,7 +17309,6 @@ SceneRoots:
   - {fileID: 269367683}
   - {fileID: 1776325240}
   - {fileID: 1426340012}
-  - {fileID: 1286283592}
   - {fileID: 1957203761}
   - {fileID: 507753449}
   - {fileID: 814001485}
