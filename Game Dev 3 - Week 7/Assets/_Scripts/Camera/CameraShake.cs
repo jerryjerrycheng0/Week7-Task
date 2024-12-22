@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameDevWithMarco.Player;
 
 namespace GameDevWithMarco.CameraStuff
 {
@@ -13,6 +14,8 @@ namespace GameDevWithMarco.CameraStuff
 
         [SerializeField] float actualShakeDuration;
         [SerializeField] float actualShakeMagnitude;
+        [SerializeField] AudioSource shakeSound;
+        [SerializeField] AxeBullet axeBullet;
 
         private void Awake()
         {
@@ -40,6 +43,8 @@ namespace GameDevWithMarco.CameraStuff
             originalPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, -10);
             shakeDuration = duration;
             shakeMagnitude = magnitude;
+            shakeSound.Play();
+            if (axeBullet.haveIHitThetarget == true) shakeSound.Stop();
         }
 
         public void ShakeReaction()

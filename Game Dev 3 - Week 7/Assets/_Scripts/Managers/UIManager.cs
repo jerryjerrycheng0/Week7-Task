@@ -13,12 +13,14 @@ namespace GameDevWithMarco.Managers
         [SerializeField] TMP_Text playerLives;
         [SerializeField] GlobalData globalData;
         [SerializeField] PlayerHP playerHP;
+        [SerializeField] AudioSource coinGet;
 
         public void UpdateScoreText()
         {
             if (globalData != null)
             {
                 scoreText.text = $"<b>Score</b>: {globalData.Score}";
+                coinGet.Play();
             }
             else
             {
@@ -37,6 +39,7 @@ namespace GameDevWithMarco.Managers
                 Debug.LogWarning("No PlayerHP assigned to the UI Manager");
             }
         }
+
     }
 }
 

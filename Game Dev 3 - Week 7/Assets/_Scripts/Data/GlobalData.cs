@@ -10,8 +10,10 @@ namespace GameDevWithMarco.Data
     public class GlobalData : ScriptableObject
     {
         private int score = 0;
-        private int scoreRequiredToWin;
+        public int scoreRequiredToWin;
         [SerializeField] GameEvent gameWon;
+        
+
 
         public int Score
         {
@@ -45,6 +47,7 @@ namespace GameDevWithMarco.Data
             int sortedScore = Mathf.Abs(amountToAdd);
 
             score += sortedScore;
+            
 
             if (score >= scoreRequiredToWin)
             {

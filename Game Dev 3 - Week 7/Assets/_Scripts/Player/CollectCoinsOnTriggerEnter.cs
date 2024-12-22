@@ -14,16 +14,19 @@ namespace GameDevWithMarco.Player
     {
         [SerializeField] GameEvent coinCollected;
         [SerializeField] GlobalData globalData;
+        
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.tag == "Coin")
             {
                 int coinValue = collision.GetComponent<Coin>().CoinValue;
+                
 
                 if (globalData != null)
                 {
                     globalData.AddToScore(coinValue);
+                    
                 }
                 else
                 {
