@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using GameDevWithMarco.ObserverPattern;
 using GameDevWithMarco.RandomStuff;
 using UnityEngine;
@@ -9,25 +7,25 @@ namespace GameDevWithMarco.Data
     [CreateAssetMenu(fileName = "New Global Data", menuName = "Scriptable Objects/Data")]
     public class GlobalData : ScriptableObject
     {
-        private int score = 0;
+        public int score = 0;
         public int scoreRequiredToWin;
         [SerializeField] GameEvent gameWon;
-        
 
+        private void OnEnable()
+        {
+            // Reset the score when the script is reloaded or enabled
+            ResetScore();
+        }
 
         public int Score
         {
-            get
-            {
-                return score;
-            }
+            get { return score; }
         }
 
         public void ResetScore()
         {
-
+            // Reset score when the scene reloads or on enable
             score = 0;
-
         }
 
         public void SetTheScoreRequiredToWin()
@@ -45,15 +43,12 @@ namespace GameDevWithMarco.Data
         public void AddToScore(int amountToAdd)
         {
             int sortedScore = Mathf.Abs(amountToAdd);
-
             score += sortedScore;
-            
 
             if (score >= scoreRequiredToWin)
             {
                 gameWon.Raise();
             }
-
         }
     }
 }

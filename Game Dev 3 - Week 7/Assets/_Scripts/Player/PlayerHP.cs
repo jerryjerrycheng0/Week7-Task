@@ -11,8 +11,14 @@ namespace GameDevWithMarco.Player
         public int healthPoints = 10;
         public int damageValue = 1;
         public bool isPlayerDed = false;
+        
         [SerializeField] GameManager gameManager;
         [SerializeField] UIManager uiManager;
+
+        private void Start()
+        {
+            isPlayerDed = false;
+        }
 
         public void Damage(int amount)
         {

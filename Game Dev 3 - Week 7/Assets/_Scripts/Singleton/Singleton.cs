@@ -3,8 +3,6 @@ using UnityEngine;
 namespace GameDevWithMarco.Singleton
 {
     // Abstract class for creating a Singleton pattern in Unity
-    //The where T part will allow us to use this on any script since T is a generic type and
-    //can accept anything.
     public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
         private static T instance; // Store the single instance of the derived class
@@ -14,7 +12,8 @@ namespace GameDevWithMarco.Singleton
         {
             get
             {
-                if (instance == null) // If no instance exists
+                // If no instance exists, find or create one
+                if (instance == null)
                 {
                     instance = FindObjectOfType<T>(); // Look for an existing instance in the scene
 
@@ -30,15 +29,38 @@ namespace GameDevWithMarco.Singleton
 
         protected virtual void Awake()
         {
-            if (instance != null && instance != this) // If an instance already exists and it's not this one
+            // Check if the instance already exists and it's not this instance
+            if (instance != null && instance != this)
             {
                 Destroy(gameObject); // Destroy the duplicate instance's GameObject
             }
             else
             {
                 instance = this as T; // Set the instance to this (the current instance)
-                DontDestroyOnLoad(gameObject); // Don't destroy the GameObject when loading new scenes
+                DontDestroyOnLoad(gameObject); // Ensure this object persists across scene loads
             }
         }
+
+        // Ensures that the instance is always valid and persists across multiple scenes
+        protected virtual void OnEnable()
+        {
+            // If the instance is null or does not match this object, make this object the new instance
+            if (instance == null || instance != this)
+            {
+                instance = this as T;
+                DontDestroyOnLoad(gameObject);
+            }
+        }
+
+        
+        protected virtual void OnDestroy()
+        {
+            if (instance == this)
+            {
+                instance = null;
+            }
+        }
+
+        
     }
 }

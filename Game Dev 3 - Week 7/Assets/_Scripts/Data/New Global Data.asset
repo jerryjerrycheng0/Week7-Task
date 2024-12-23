@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822dd3fee2dc1f54492d85c069be0fb6, type: 3}
   m_Name: New Global Data
   m_EditorClassIdentifier: 
+  score: 4
+  scoreRequiredToWin: 4
   gameWon: {fileID: 11400000, guid: c19e2147d993bab40922ba7439007468, type: 2}

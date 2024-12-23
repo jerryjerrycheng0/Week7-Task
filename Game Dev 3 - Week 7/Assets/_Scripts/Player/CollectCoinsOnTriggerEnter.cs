@@ -33,7 +33,7 @@ namespace GameDevWithMarco.Player
                     Debug.LogWarning("No Global Data SO assigned to the CCOTE script");
                 }
 
-                Destroy(collision.gameObject);
+                collision.gameObject.SetActive(false);
 
                 coinCollected.Raise();
             }

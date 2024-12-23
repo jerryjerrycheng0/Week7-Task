@@ -10,11 +10,18 @@ namespace GameDevWithMarco.Managers
     public class UIManager : MonoBehaviour
     {
         [SerializeField] TMP_Text scoreText;
+        [SerializeField] TMP_Text requiredScoreText;
         [SerializeField] TMP_Text playerLives;
         [SerializeField] GlobalData globalData;
         [SerializeField] PlayerHP playerHP;
         [SerializeField] AudioSource coinGet;
 
+        public void Start()
+        {
+            scoreText.text = $"<b>Score</b>: {globalData.Score}";
+            playerLives.text = $"<b>Lives</b>: {playerHP.healthPoints}";
+            requiredScoreText.text = $"<i><b>Score Required To Win</b></i>: {globalData.scoreRequiredToWin}";
+        }
         public void UpdateScoreText()
         {
             if (globalData != null)

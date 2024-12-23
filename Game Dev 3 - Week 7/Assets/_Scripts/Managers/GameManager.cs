@@ -1,85 +1,68 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using GameDevWithMarco.Singleton;
 using GameDevWithMarco.Data;
 using GameDevWithMarco.Player;
 
 namespace GameDevWithMarco.Managers
 {
-    public class GameManager : Singleton<GameManager>
+    public class GameManager : MonoBehaviour
     {
         [SerializeField] GlobalData globalData;
         [SerializeField] PlayerHP playerHP;
         [SerializeField] AudioSource gameOverSound;
         [SerializeField] AudioSource gameWinSound;
-        [SerializeField] GameObject[] uiElementsOver;  // Array to hold the UI elements to activate
-        [SerializeField] GameObject[] uiElementsWin;
+        [SerializeField] GameObject[] uiElementsOver;  // UI elements for Game Over screen
+        [SerializeField] GameObject[] uiElementsWin;   // UI elements for Game Win screen
 
         private void Start()
         {
-            SetGOUIActive(false);
-            SetGWUIActive(false);
-            CheckGlobalData();
-        }
-
-
-        private void CheckGlobalData()
-        {
+            // Reset score and set the required score when the game starts
             if (globalData != null)
             {
                 globalData.ResetScore();
                 globalData.SetTheScoreRequiredToWin();
             }
-            else
-            {
-                Debug.LogWarning("Global Data SO not assigned to Game Manager");
-            }
+
+            SetGOUIActive(false);
+            SetGWUIActive(false);
         }
 
         public void GameWon()
         {
-            Time.timeScale = 0f;
+            Time.timeScale = 0f; // Stop time to freeze the game
             gameWinSound.Play();
-            SetGWUIActive(true);
+            SetGWUIActive(true);  // Activate Game Win UI
             Debug.Log("GAME WON");
         }
+
         public void GameOver()
         {
-            if (playerHP.isPlayerDed == true)
+            if (playerHP.isPlayerDed)
             {
-                SetGOUIActive(true);
-
-                // Play the Game Over sound
-                if (gameOverSound != null)
-                {
-                    gameOverSound.Play();
-                }
-
+                SetGOUIActive(true);  // Activate Game Over UI
+                gameOverSound.Play();
                 // Unlock the cursor and make it visible
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
-
-                // Pause the game
-                Time.timeScale = 0; // Stop the game time
+                // Stop the game time (pause the game)
+                Time.timeScale = 0f; // Stop the game time
             }
         }
 
-        public void SetGOUIActive(bool isActiveA)
+        public void SetGOUIActive(bool isActive)
         {
-            // Set each UI element active or inactive
+            // Set each UI element active or inactive for the Game Over screen
             foreach (GameObject uiElement in uiElementsOver)
             {
-                uiElement.SetActive(isActiveA);
+                uiElement.SetActive(isActive);
             }
         }
 
-        public void SetGWUIActive(bool isActiveB)
+        public void SetGWUIActive(bool isActive)
         {
-            // Set each UI element active or inactive
-            foreach (GameObject uiElementTwo in uiElementsWin)
+            // Set each UI element active or inactive for the Game Win screen
+            foreach (GameObject uiElement in uiElementsWin)
             {
-                uiElementTwo.SetActive(isActiveB);
+                uiElement.SetActive(isActive);
             }
         }
     }
