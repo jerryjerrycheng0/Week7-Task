@@ -1,6 +1,6 @@
+using UnityEngine;
 using GameDevWithMarco.ObserverPattern;
 using GameDevWithMarco.RandomStuff;
-using UnityEngine;
 
 namespace GameDevWithMarco.Data
 {
@@ -11,11 +11,7 @@ namespace GameDevWithMarco.Data
         public int scoreRequiredToWin;
         [SerializeField] GameEvent gameWon;
 
-        private void OnEnable()
-        {
-            // Reset the score when the script is reloaded or enabled
-            ResetScore();
-        }
+        public event System.Action OnScoreChanged;
 
         public int Score
         {
@@ -24,14 +20,13 @@ namespace GameDevWithMarco.Data
 
         public void ResetScore()
         {
-            // Reset score when the scene reloads or on enable
             score = 0;
+            OnScoreChanged?.Invoke();
         }
 
         public void SetTheScoreRequiredToWin()
         {
             scoreRequiredToWin = 0;
-
             Coin[] storeAllCoins = FindObjectsOfType<Coin>();
 
             foreach (Coin coin in storeAllCoins)
@@ -44,6 +39,7 @@ namespace GameDevWithMarco.Data
         {
             int sortedScore = Mathf.Abs(amountToAdd);
             score += sortedScore;
+            OnScoreChanged?.Invoke();
 
             if (score >= scoreRequiredToWin)
             {
