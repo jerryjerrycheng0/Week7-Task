@@ -39,6 +39,10 @@ namespace GameDevWithMarco.Managers
         {
             UpdateScoreTextOnUI();
             CheckWinOrLoseCondition();
+            if(playerHP != null && playerHP.isPlayerDed)
+            {
+                globalData.score = 0;
+            }
         }
 
         private void OnEnable()

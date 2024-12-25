@@ -54,7 +54,6 @@ namespace GameDevWithMarco.Managers
             foreach (GameObject uiElement in uiElementsOver)
             {
                 uiElement.SetActive(isActive);
-                Debug.Log("Activated");
             }
         }
 
