@@ -57,21 +57,6 @@ namespace GameDevWithMarco.Player
                 rb.MovePosition(newPosition);
             }
         }
-
-        private void MoveOutOfBoundsLogic()
-        {
-            Vector3 newVelocity = rb.velocity;
-            Vector3 tempPosition = transform.localPosition + newVelocity * Time.deltaTime;
-            if (screenBounds.AmIOutOfBounds(tempPosition))
-            {
-                Vector2 newPosition = screenBounds.CalculateWrappedPosition(tempPosition);
-                transform.localPosition = newPosition;
-            }
-            else
-            {
-                rb.MovePosition(tempPosition);
-            }
-        }
     }
 }
 

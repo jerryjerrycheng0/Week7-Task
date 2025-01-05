@@ -28,9 +28,9 @@ namespace GameDevWithMarco.Managers
 
         public void GameWon()
         {
-            Time.timeScale = 0f; // Stop time to freeze the game
+            Time.timeScale = 0f; // Stop the game time
             gameWinSound.Play();
-            SetGWUIActive(true);  // Activate Game Win UI
+            SetGWUIActive(true); // Activate Game Win UI
             Debug.Log("GAME WON");
         }
 
@@ -40,10 +40,8 @@ namespace GameDevWithMarco.Managers
             {
                 SetGOUIActive(true);  // Activate Game Over UI
                 gameOverSound.Play();
-                // Unlock the cursor and make it visible
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
-                // Stop the game time (pause the game)
                 Time.timeScale = 0f; // Stop the game time
             }
         }

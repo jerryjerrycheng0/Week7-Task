@@ -15,7 +15,7 @@ namespace GameDevWithMarco.CameraStuff
 
         [HideInInspector] public Vector2 ripplePos;
         private Vector3 pos;
-        private UnityEngine.Camera cam;
+        private Camera cam;
 
         private void Start()
         {

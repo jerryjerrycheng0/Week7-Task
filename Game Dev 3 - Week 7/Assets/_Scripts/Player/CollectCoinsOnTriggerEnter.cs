@@ -1,7 +1,4 @@
-using GameDevWithMarco.Managers;
 using GameDevWithMarco.ObserverPattern;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using GameDevWithMarco.RandomStuff;
 using GameDevWithMarco.Data;

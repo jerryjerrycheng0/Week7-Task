@@ -1,16 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using GameDevWithMarco.Player;
 
 namespace GameDevWithMarco.Trap
 {
     public class Bone : MonoBehaviour
     {
         // Variables for movement between start and end points
-        [SerializeField] private Transform startPoint; // Start position of the movement
-        [SerializeField] private Transform endPoint; // End position of the movement
-        [SerializeField] private float moveSpeed = 2f; // Speed of the movement
+        [SerializeField] private Transform startPoint;
+        [SerializeField] private Transform endPoint;
+        [SerializeField] private float moveSpeed = 2f;
 
         private bool movingToEnd = true; // Direction of movement
 
@@ -34,8 +31,8 @@ namespace GameDevWithMarco.Trap
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            // Check if the collision is with an enemy bullet
-            if ( collision.gameObject.CompareTag("Axe"))
+            // Check if the collision is with the player's axe
+            if (collision.gameObject.CompareTag("Axe"))
             {
                 gameObject.SetActive(false);
                 startPoint.gameObject.SetActive(false);

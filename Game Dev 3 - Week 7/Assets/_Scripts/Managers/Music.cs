@@ -1,6 +1,5 @@
 using UnityEngine;
 using GameDevWithMarco.Singleton;
-using GameDevWithMarco.Player;
 
 namespace GameDevWithMarco.Managers
 {
